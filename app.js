@@ -16,14 +16,12 @@ function sum(a, b ) { //eslint-disable-line
   var message = 'The sum of ' + a + ' and ' + b + ' is ' + theSum + '.';
   var sumArr = [];
   sumArr.push(theSum);
-    // sumArr.push(theSum);
   sumArr.push(message);
-  // console.log(sumArr);
   return sumArr;
 }
 // sum(5,6);
 // TODO: Here is the test for sum(); uncomment it to run it
-// testSum(4, 7);
+testSum(4, 7);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
