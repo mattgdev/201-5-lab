@@ -157,8 +157,8 @@ function multiplyArray(testArray) { //eslint-disable-line
   // console.log(prod1);
   var totalProd = multiply(prod1,testArray[2])[0];
   // console.log(totalProd);
-  var message = testArray[0] + " , " + testArray[1]  " , " + testArray[2] + " was passed in as an array of numbers, and " + totalProd + " is their sum. ";
-  // console.log(message);
+  var message = "The numbers " + testArray[0]+","+testArray[1]+","+testArray[2] + " have a product of " + totalProd + "."
+  console.log(message);
   newArr2.push(totalProd);
   // console.log(newArr2);
   newArr2.push(message);
@@ -170,6 +170,6 @@ function multiplyArray(testArray) { //eslint-disable-line
 
 
 // Here is the test for multiplyArray(); uncomment it to run it
-// testMultiplyArray(2,3,4);
+testMultiplyArray(2,3,4);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. You're done! Submit the link to the repo following the instructions in Canvas.
