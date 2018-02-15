@@ -46,7 +46,7 @@ function multiply(a, b) { //eslint-disable-line
 // multiply(5,6);
 
 // TODO: Here is the test for multiply(); uncomment it to run it
-// testMultiply(5,9);
+testMultiply(5,9);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -71,44 +71,34 @@ Test this function by hand in the console to get it working, and when you think 
 
 // TODO: Write your code here
 function sumAndMultiply(a, b, c) { //eslint-disable-line
-  var newArr = [];
-  var sumArr =[];
 
-    sum(a,b);
-    console.log(sumArr);
-    // sumArr = [theSum,message];
-  // sumArr.pop();
-  // console.log(sumArr);
-    // newArr.push(sumArr[0]);
-    return ;
-    // sum(sumArr[0],c)
-    // newArr[0] = sumArr[0]
+  var sum1 = sum(a,b);
+  var sum2 = sum(sum1[0],c);
+  // console.log(Sum2);
+  var multy1 = multiply(a, b);
+  var multy2 = multiply(multy1[0], c);
+  // console.log(multy2);
+  var message1 = a + " and " + b + " and " + c + " sum to " + sum2[0] + ".";
+  var message2 = "The product of " + a + " and " + b + " and " + c + " is " +  multy2[0] + ".";
 
-  // var theSum = a + b + c;
-  // var theMulti = a*b*c;
-  // newArr.push(theSum);
-  // newArr.push(theMulti);
   // console.log(newArr);
-  // var message1 = 'The sum of ' + a + b +','+' and '+c+' is ' + theSum + '.';
-  // var message2 = 'The product of ' + a + b +','+' and '+c+' is ' + theMulti + '.';
-  // newArr.push(message1);
-  // newArr.push(message2);
-  // console.log(newArr);
-  // return newArr;
+  return [sum2[0], multy2[0],message1,message2];
 }
 
-sumAndMultiply(2,4,6);
+// sumAndMultiply(2,4,6);
 
 // TODO: Here is the test for sumAndMultiply(); uncomment it to run it
-// testSumAndMultiply(4,7,5);
+testSumAndMultiply(4,7,5);
 
-// Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
+// Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub
+ // and your laptop. Don't forget to create a new branch for your work on the next question!
 
 /////////////////////////////////////
 /* Problem 4
-Write a function called sumArray() that takes in an array of numbers as its single
-argument and thenreturns an array where the first element is the sum of the numbers
-in the array,
+Write a function called sumArray() that
+
+takes in an array of numbers as its single argument and then returns an array
+where the first element is the sum of the numbers in the array,
 
 and the second element is a string that EXACTLY follows this example and concatenates
 a message using the arguments that were passed into the function:
@@ -118,28 +108,27 @@ IMPORTANT DETAIL: You may not use the arithmetic operator + in this function.
 To do addition, use your sum() function that you've already created. You're going
 to have to be resourceful to figure out how to do this.
 
-Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testSumArray() function and see if the test passes.*/
+Test this function by hand in the console to get it working, and when you think it is finished,
+ uncomment the call for the testSumArray() function and see if the test passes.*/
 
 // TODO: Write your code here
-// var testArray = [2, 3, 4]; //eslint-disable-line
+var testArray = [2, 3, 4]; //eslint-disable-line
 
-// function sumArray(testArray) { //eslint-disable-line
-//
-//
-//   var testArray2 = [];
-//   var oneVal = 0;
-//   for(var i=0;i < testArray.length; i++){
-//     oneVal += testArray[i];
-//   }
-//   console.log(testArray);
-//    testArray2.push(oneVal);
-//    testArray2.push(testArray[0]+','+testArray[1]+','
-//    +testArray[2]+'was passed in as an array of numbers, and' + oneVal +'is their sum');
-//     return testArray2;
-// }
+function sumArray(testArray) { //eslint-disable-line
+  var newArr1 = [];
+  var sum1 = sum(testArray[0],testArray[1])[0];
+  var totalSum = sum(sum1,testArray[2])[0];
+  var message = testArray[0] + " , " + testArray[1] + " , " +testArray[2] + " was passed in as an array of numbers, and " + totalSum + " is their sum. ";
+  newArr1.push(totalSum);
+  // console.log(newArr1);
+  newArr1.push(message);
+  // console.log(message);
+  // console.log(newArr1);
+  return;
+}
 
 // sumArray(testArray);
-
+//
 // TODO: Here is the test for sumArray(); uncomment it to run it
 // testSumArray(testArray);
 
@@ -147,8 +136,10 @@ Test this function by hand in the console to get it working, and when you think 
 
 /////////////////////////////////////
 /* Problem 5
-Write a function called multiplyArray() that takes an array of numbers as its argument and returns an array whose first element is the product of those numbers,
- and the second element is a string that EXACTLY follows this example and concatenates a message using the arguments that were passed into the function:
+Write a function called multiplyArray() that takes an array of numbers as its
+argument and returns an array whose first element is the product of those numbers,
+ and the second element is a string that EXACTLY follows this example and
+ concatenates a message using the arguments that were passed into the function:
 
 "The numbers 2,3,4 have a product of 24."
 
@@ -159,17 +150,22 @@ Test this function by hand in the console to get it working, and when you think 
 the test passes.*/
 
 // Write your code here
-// function multiplyArray(testArray) { //eslint-disable-line
-//   var testArray2 = [];
-//   var oneVal = 1;
-//   for(var i=0;i < testArray.length; i++){
-//     oneVal *= testArray[i];
-//   }
-//    testArray2.push(oneVal);
-//    testArray2.push(testArray[0]+','+testArray[1]+','+testArray[2]+'was passed in as an array of numbers, and' + oneVal +'is their product');
-//    return testArray2;
-// }
-//
+function multiplyArray(testArray) { //eslint-disable-line
+  var newArr2 = [];
+
+  var prod1 = multiply(testArray[0],testArray[1])[0];
+  // console.log(prod1);
+  var totalProd = multiply(prod1,testArray[2])[0];
+  // console.log(totalProd);
+  var message = testArray[0] + " , " + testArray[1]  " , " + testArray[2] + " was passed in as an array of numbers, and " + totalProd + " is their sum. ";
+  // console.log(message);
+  newArr2.push(totalProd);
+  // console.log(newArr2);
+  newArr2.push(message);
+  // console.log(newArr2);
+  return;
+}
+
 // multiplyArray(testArray);
 
 
